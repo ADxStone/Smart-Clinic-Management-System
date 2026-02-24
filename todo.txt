@@ -1,0 +1,38 @@
+Appointments
+    -Create & delete Appointments 
+        (---)
+    -Assign patients to the doctor
+    -Update appointment status
+    -Validations
+
+Patient
+    -Register and remove new patients(Each patient to have unique ID)
+    -View patients
+    -Search patient by ID
+    -Update patient info.
+
+Users
+    -Register and login users of the system.
+    -Validate credentials
+    -
+
+Utilities(Decorators)
+    -Handle authentication and role control(Receptionist & doctor)
+
+Main
+    -Link all existing files.
+    -House the Main Menu.
+
+Readme- To be filled after project 
+
+ROLES
+1.Receptionist
+    - Register and manage patient data
+    -Assign Appointments
+
+2.doctor
+    -View their Appointments
+    -Confirm if appointments have been complete.
+    
+
+    
