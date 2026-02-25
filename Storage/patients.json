@@ -22,5 +22,11 @@
         "name": "Alvin",
         "age": "41",
         "condition": "cystic fibrosis"
+    },
+    {
+        "id": "p5",
+        "name": "Philip",
+        "age": "18",
+        "condition": "deaf"
     }
 ]

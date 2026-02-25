@@ -60,11 +60,24 @@ class Patient:
 
         print("Patient not found.")
 
-            
+    @staticmethod
+    def delete_patients():
+        data = load_patients()
+        patient_id = input("Enter patient ID to delete: ")
+
+        for patient in data:
+            if patient["id"] == patient_id:
+                data["patients"].remove(patient)
+                save_data(data)
+                print("Patient deleted.")
+                return
+
+        print("Patient not found.")
 
 if __name__ == "__main__":
     Patient.register_patient()
     Patient.view_patients()
     Patient.search_patients()
+    Patient.delete_patients()
 
  
