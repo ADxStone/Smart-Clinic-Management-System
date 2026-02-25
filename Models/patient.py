@@ -8,4 +8,34 @@ def load_patients():
 
 def save_patients(patients):
     with open(DATA_FILE, "w") as file:
-        json.damp(patients, file, indent=4)
+        json.dump(patients, file, indent=4)
+
+
+class Patient:
+
+    @staticmethod
+    def register_patient():
+        data = load_patients()
+
+        name = input("Enter patient name: ")
+        age = input("Enter age: ")
+        condition = input("Enter condition: ")
+
+        patient_id = "p" + str(len(data) + 1)
+
+        new_patient = {
+            "id": patient_id,
+            "name": name,
+            "age": age,
+            "condition": condition
+        }
+
+        data.append(new_patient)
+        save_patients(data)
+
+        print("Patient registered successfully!")
+
+
+
+
+ 
