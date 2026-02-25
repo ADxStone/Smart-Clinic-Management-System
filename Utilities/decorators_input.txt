@@ -1,0 +1,27 @@
+Required input for the decorators and short explanation of behavior
+
+User data accepted (two options):
+- Dict form: {username: string, role: string}
+  - Example: {"username": "alice", "role": "doctor"}
+- Module session: Models.users.get_current_user() or Models.users.current_user
+  - Should return either the dict above or an object with a .role attribute
+
+Behavior of the decorators (short names used in code):
+- login(func):
+  - Ensures a user is present (from argument or session). If missing, prints
+    "Access denied: please log in first." and stops the call.
+- role(role_name_or_list)(func):
+  - Ensures a user is present then checks the user's role (case-insensitive).
+  - If role does not match allowed roles, prints
+    "Access denied: insufficient permissions." and stops the call.
+
+How to call functions protected by the decorators (examples):
+- Pass a user dict as kwarg: protected(user={"username":"u","role":"doctor"})
+- Pass a user dict as first positional arg: protected({"username":"u","role":"doctor"})
+- Or set session: Models.users.login_user(...) then call protected() with no user arg
+
+Notes:
+- The extractor accepts a user object from the session API even if it is an object
+  with attributes (object must be returned by Models.users.get_current_user()).
+- If you prefer passing object instances directly to decorated functions, update
+  the decorator extractor to accept object-like first positional args (optional).
