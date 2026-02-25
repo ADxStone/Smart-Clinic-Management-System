@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "username": "doctor1",
+            "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+            "role": "doctor"
+        },
+        {
+            "username": "PrexidazieMorara",
+            "password": "5d769a54eaa7c861b6b73ceb67e7708f2e30aa6db37dd2a8b1099546c98a1261",
+            "role": "doctor"
+        }
+    ]
+}
