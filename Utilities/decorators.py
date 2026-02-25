@@ -2,7 +2,7 @@ from functools import wraps
 from typing import Callable, Iterable, Optional
 
 
-def _extract_user_from_args_kwargs(args, kwargs) -> Optional[dict]:
+def _get_user(args, kwargs) -> Optional[dict]:
     for key in ("user", "current_user"):
         if key in kwargs and kwargs[key]:
             return kwargs[key]
@@ -34,10 +34,10 @@ def _extract_user_from_args_kwargs(args, kwargs) -> Optional[dict]:
     return None
 
 
-def login_required(func: Callable) -> Callable:
+def login(func: Callable) -> Callable:
     @wraps(func)
     def wrapper(*args, **kwargs):
-        user = _extract_user_from_args_kwargs(args, kwargs)
+        user = _get_user(args, kwargs)
         if not user:
             print("Access denied: please log in first.")
             return None
@@ -46,7 +46,7 @@ def login_required(func: Callable) -> Callable:
     return wrapper
 
 
-def role_required(required_role_or_roles: Iterable[str]):
+def role(required_role_or_roles: Iterable[str]):
     if isinstance(required_role_or_roles, str):
         required_roles = {required_role_or_roles.lower()}
     else:
@@ -55,18 +55,18 @@ def role_required(required_role_or_roles: Iterable[str]):
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args, **kwargs):
-            user = _extract_user_from_args_kwargs(args, kwargs)
+            user = _get_user(args, kwargs)
             if not user:
                 print("Access denied: please log in first.")
                 return None
 
-            role = None
+            role_val = None
             if isinstance(user, dict):
-                role = user.get("role") or user.get("role_name")
+                role_val = user.get("role") or user.get("role_name")
             else:
-                role = getattr(user, "role", None)
+                role_val = getattr(user, "role", None)
 
-            if not role or role.lower() not in required_roles:
+            if not role_val or role_val.lower() not in required_roles:
                 print("Access denied: insufficient permissions.")
                 return None
 
@@ -77,4 +77,4 @@ def role_required(required_role_or_roles: Iterable[str]):
     return decorator
 
 
-__all__ = ["login_required", "role_required"]
+__all__ = ["login", "role"]
