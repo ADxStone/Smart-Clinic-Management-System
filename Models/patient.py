@@ -47,8 +47,24 @@ class Patient:
             print("Age", patient["age"])
             print("Condition", patient["condition"])
 
+    @staticmethod
+    def search_patients():
+        data = load_patients()
+        search_id = input("Enter patient ID: ") 
+
+        for patient in data:
+            if patient["id"] == search_id:
+                print("Patient found: ")
+                print(patient)
+                return
+
+        print("Patient not found.")
+
+            
+
 if __name__ == "__main__":
     Patient.register_patient()
     Patient.view_patients()
+    Patient.search_patients()
 
  
