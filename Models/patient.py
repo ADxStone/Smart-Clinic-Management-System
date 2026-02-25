@@ -36,6 +36,19 @@ class Patient:
         print("Patient registered successfully!")
 
 
+    @staticmethod
+    def view_patients():
+        data = load_patients()
 
+        for patient in data:
+            print("-----------------------")
+            print("ID", patient["id"])
+            print("Name", patient["name"])
+            print("Age", patient["age"])
+            print("Condition", patient["condition"])
+
+if __name__ == "__main__":
+    Patient.register_patient()
+    Patient.view_patients()
 
  

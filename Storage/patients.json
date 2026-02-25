@@ -4,5 +4,11 @@
         "name": "James",
         "age": "23",
         "condition": "syphilis"
+    },
+    {
+        "id": "p2",
+        "name": "Eric",
+        "age": "45",
+        "condition": "heart disease"
     }
 ]
