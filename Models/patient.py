@@ -67,8 +67,8 @@ class Patient:
 
         for patient in data:
             if patient["id"] == patient_id:
-                data["patients"].remove(patient)
-                save_data(data)
+                data.remove(patient)
+                save_patients(data)
                 print("Patient deleted.")
                 return
 
