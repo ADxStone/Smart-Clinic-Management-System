@@ -85,7 +85,7 @@ class UserManager:
             if user["username"]== username and hashed_password == user["password"]:
                 self.current_user = User(user["username"], user["password"], user["role"])
                 self.failed_Login_attempts = 0  # Reset failed attempts on successful login
-                return f"Welcome, {user['role']} {username}! Login successful."
+                return f"Welcome! {user['role']} {username}, Login successful."
         
         
         #Failed Login 
