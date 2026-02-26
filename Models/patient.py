@@ -48,6 +48,36 @@ class Patient:
             print("Condition", patient["condition"])
 
     @staticmethod
+    def update_patients():
+        data = load_patients()
+        patient_id = input("Enter patient ID to update: ")
+
+        for patient in data:
+            if patient["id"] == patient_id:
+
+                print("Leave black to keep current value.")
+
+                new_name = input(f"New name ({patient['name']}): ")
+                new_age = input(f"New age ({patient['age']}): ")
+                new_condition = input(f"New condition ({patient['condition']}): ")
+
+                if new_name != "":
+                    patient["name"] = new_name
+
+                if new_age != "":
+                    patient["age"] = new_age
+
+                if new_condition != "":
+                    patient["condition"]
+
+                save_patient(data)
+                print("Patient updated successfuly")
+                return
+
+        print("Patient not found.")
+
+
+    @staticmethod
     def search_patients():
         data = load_patients()
         search_id = input("Enter patient ID: ") 
