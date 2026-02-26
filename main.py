@@ -47,6 +47,9 @@ def main():
 
             if manager.current_user:
                 print(f"Logged in as {manager.current_user.role}: {manager.current_user.username}")
+ 
+ 
+         #Here you can add role based access control for different functionalities
 
         elif choice == "3":
             print("\n--- LOGOUT ---")
