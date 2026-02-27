@@ -41,7 +41,7 @@ def receptionist_menu(manager: UserManager, user=None):
         print("6. View appointments")
         print("7. Back / Logout")
         choice = input("Select (1-7): ").strip()
-         if choice == "1":
+        if choice == "1":
             Patient.register_patient()
 
         elif choice == "2":
