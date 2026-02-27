@@ -1,5 +1,5 @@
 from Models.users import UserManager
-from Models.patient import list_patients
+from Models.patient import Patient
 from Models.appointment import list_appointments_for_doctor
 from Utilities.decorators import login, role
 
@@ -33,25 +33,36 @@ def doctor_menu(manager: UserManager, user=None):
 @role("receptionist")
 def receptionist_menu(manager: UserManager, user=None):
     while True:
-        print("\n--- RECEPTIONIST MENU ---")
-        print("1.Register patient. - Not complete")
-        print("2.List patients - Not complete ")
-        print("3.Create appointment-Not complete")
-        print("4.View appointments(1.For each patient, 2. For each doctor)-Not complete")
-        print("5. Back / Logout")
-        choice = input("Select (1-3): ").strip()
-        if choice == "1":
-            print("Example: No logic implemented.")
+        print("1. Register patient")
+        print("2. List patients")
+        print("3. Update patient")
+        print("4. Delete patient")
+        print("5. Create appointment")
+        print("6. View appointments")
+        print("7. Back / Logout")
+        choice = input("Select (1-7): ").strip()
+         if choice == "1":
+            Patient.register_patient()
+
         elif choice == "2":
-            pats = list_patients()
-            print("Patients:", pats)
+            Patient.view_patients()
+
         elif choice == "3":
-            print("Example: create appointment (No logic implemented)")
+            Patient.update_patients()
+
         elif choice == "4":
-            print("Example: View appointments(No logic implemented)")
+            Patient.delete_patients()
+
         elif choice == "5":
+            print("Appointment feature coming soon")
+
+        elif choice == "6":
+            print("Appointment viewing coming soon")
+
+        elif choice == "7":
             print(manager.logout_user())
             break
+
         else:
             print("Invalid option")
 

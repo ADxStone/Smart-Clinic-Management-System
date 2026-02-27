@@ -68,10 +68,10 @@ class Patient:
                     patient["age"] = new_age
 
                 if new_condition != "":
-                    patient["condition"]
+                    patient["condition"] = new_condition
 
-                save_patient(data)
-                print("Patient updated successfuly")
+                save_patients(data)
+                print("Patient updated successfully.")
                 return
 
         print("Patient not found.")
@@ -103,46 +103,3 @@ class Patient:
                 return
 
         print("Patient not found.")
-
-if __name__ == "__main__":
-    Patient.register_patient()
-    Patient.view_patients()
-    Patient.search_patients()
-    Patient.delete_patients()
-
- 
-
-
-#This Part of Code is From main.py
-from Models.patient import Patient
-
-def receptionist_menu():
-    while True:
-        print("\n--- Receptionist Menu ---")
-        print("1. Register Patient")
-        print("2. View Patients")
-        print("3. Search Patient")
-        print("4. Update Patient")
-        print("5. Delete Patient")
-        print("6. Back")
-
-        choice = input("Choose option: ")
-
-        if choice == "1":
-            Patient.register_patient()
-        elif choice == "2":
-            Patient.view_patients()
-        elif choice == "3":
-            Patient.search_patients()
-        elif choice == "4":
-            Patient.update_patients()
-        elif choice == "5":
-            Patient.delete_patients()
-        elif choice == "6":
-            break
-        else:
-            print("Invalid choice.")
-
-        
-if __name__ == "__main__":
-    receptionist_menu()
