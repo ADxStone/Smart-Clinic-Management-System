@@ -106,3 +106,4 @@ class UserManager:
             return "Logout Successful."
         else:
             return "No user is currently logged in."
+
