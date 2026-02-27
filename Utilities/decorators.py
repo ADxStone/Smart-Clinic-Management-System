@@ -2,23 +2,25 @@ from functools import wraps
 from typing import Callable, Iterable, Optional
 
 
-def _get_user(args, kwargs) -> Optional[dict]:
+def _get_user(args, kwargs) -> Optional[object]:
+    # 1) explicit kwarg
     for key in ("user", "current_user"):
         if key in kwargs and kwargs[key]:
             return kwargs[key]
 
+    # 2) first positional arg: accept dict or object with username/role
     if args:
         first = args[0]
         if isinstance(first, dict) and ("username" in first or "role" in first):
             return first
+        if not isinstance(first, dict) and (hasattr(first, "username") or hasattr(first, "role")):
+            return first
 
+    # 3) session module
     try:
         from Models import users as users_mod
     except Exception:
-        try:
-            import Models.users as users_mod
-        except Exception:
-            users_mod = None
+        users_mod = None
 
     if users_mod is not None:
         getter = getattr(users_mod, "get_current_user", None)
@@ -27,7 +29,6 @@ def _get_user(args, kwargs) -> Optional[dict]:
                 return getter()
             except Exception:
                 return None
-
         if hasattr(users_mod, "current_user"):
             return getattr(users_mod, "current_user")
 
@@ -41,6 +42,9 @@ def login(func: Callable) -> Callable:
         if not user:
             print("Access denied: please log in first.")
             return None
+        # inject discovered user if caller didn't pass one
+        if "user" not in kwargs:
+            kwargs["user"] = user
         return func(*args, **kwargs)
 
     return wrapper
@@ -59,8 +63,7 @@ def role(required_role_or_roles: Iterable[str]):
             if not user:
                 print("Access denied: please log in first.")
                 return None
-
-            role_val = None
+            # determine role value
             if isinstance(user, dict):
                 role_val = user.get("role") or user.get("role_name")
             else:
@@ -69,6 +72,10 @@ def role(required_role_or_roles: Iterable[str]):
             if not role_val or role_val.lower() not in required_roles:
                 print("Access denied: insufficient permissions.")
                 return None
+
+            # inject discovered user if caller didn't pass one
+            if "user" not in kwargs:
+                kwargs["user"] = user
 
             return func(*args, **kwargs)
 

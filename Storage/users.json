@@ -14,6 +14,16 @@
             "username": "Mibzel Kimberly",
             "password": "d0baa50706b0f9416bcc5a9a20dec099fb3d50fe2bdb7ed6445ec3686b3aad93",
             "role": "doctor"
+        },
+        {
+            "username": "alice",
+            "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+            "role": "doctor"
+        },
+        {
+            "username": "jonah",
+            "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+            "role": "receptionist"
         }
     ]
 }
