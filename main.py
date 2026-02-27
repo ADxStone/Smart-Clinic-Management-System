@@ -34,19 +34,22 @@ def doctor_menu(manager: UserManager, user=None):
 def receptionist_menu(manager: UserManager, user=None):
     while True:
         print("\n--- RECEPTIONIST MENU ---")
-        print("1.List patients - Not complete ")
-        print("2.Create appointment-Not complete")
-        print("3.View appointments(1.For each patient, 2. For each doctor)-Not complete")
-        print("4. Back / Logout")
+        print("1.Register patient. - Not complete")
+        print("2.List patients - Not complete ")
+        print("3.Create appointment-Not complete")
+        print("4.View appointments(1.For each patient, 2. For each doctor)-Not complete")
+        print("5. Back / Logout")
         choice = input("Select (1-3): ").strip()
         if choice == "1":
+            print("Example: No logic implemented.")
+        elif choice == "2":
             pats = list_patients()
             print("Patients:", pats)
-        elif choice == "2":
-            print("Example: create appointment (No logic implemented)")
         elif choice == "3":
-            print("Example: View appointments(No logic implemented)")
+            print("Example: create appointment (No logic implemented)")
         elif choice == "4":
+            print("Example: View appointments(No logic implemented)")
+        elif choice == "5":
             print(manager.logout_user())
             break
         else:

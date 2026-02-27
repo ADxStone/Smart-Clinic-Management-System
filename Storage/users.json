@@ -16,12 +16,12 @@
             "role": "doctor"
         },
         {
-            "username": "alice",
+            "username": "roy",
             "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
             "role": "doctor"
         },
         {
-            "username": "jonah",
+            "username": "mark",
             "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
             "role": "receptionist"
         }
