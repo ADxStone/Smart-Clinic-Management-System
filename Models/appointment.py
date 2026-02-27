@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 import os
 from datetime import datetime
@@ -158,3 +159,7 @@ class Appointment:
            
         print("Appointment not found.")
             
+=======
+appointments = []
+
+
