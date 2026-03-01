@@ -30,26 +30,38 @@
         "condition": "Diabities"
     },
     {
-        "id": "p6",
-        "name": "Colony",
-        "age": "23",
-        "condition": "Diabities"
-    },
-    {
         "id": "p7",
         "name": "Brainan",
         "age": "10",
         "condition": "Diabities"
     },
     {
-        "id": "p8",
-        "name": "Jane",
+        "id": "p9",
+        "name": "Nake",
         "age": "23",
         "condition": "Diabities"
     },
     {
-        "id": "p9",
-        "name": "Nake",
+        "id": "p10",
+        "name": "Mbappe",
+        "age": "23",
+        "condition": "Malaria"
+    },
+    {
+        "id": "p11",
+        "name": "Heaven",
+        "age": "20",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p12",
+        "name": "Nunez",
+        "age": "27",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p11",
+        "name": "Semenyo",
         "age": "23",
         "condition": "Diabities"
     }

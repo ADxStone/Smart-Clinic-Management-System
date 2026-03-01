@@ -131,3 +131,5 @@ def main():
             print("Invalid option. Please select 1-4.")
             
 
+if __name__ == "__main__":
+    main()

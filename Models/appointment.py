@@ -4,10 +4,10 @@ from datetime import datetime
 
 APPOINTMENTS_FILE = "Storage/appointments.json"
 PATIENTS_FILE = "Storage/patients.json"
+USERS_FILE = "Storage/users.json"
 
 
-
-
+print("APPINTMENT FILE LOADED")
 #---------------- HELPER METHODS ------------------
 class Appointment:
     
@@ -68,6 +68,19 @@ class Appointment:
         
         if not doctor_name:
             print("Doctor username required.")
+            return
+        
+        users = Appointment.load_data(USERS_FILE)
+        
+        doctor_user = None
+        
+        for user in users:
+             if user["username"] == doctor_name and user["role"] == "doctor":
+                 doctor_user = user
+                 break
+        
+        if not doctor_user:
+            print("Doctor not found or not a doctor.")
             return
 
         appointment = {

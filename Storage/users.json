@@ -74,6 +74,51 @@
             "username": "Dr Mark",
             "password": "a0178be6a3ecfa873f1ce6742726af81a876e06e5a3b6a6e4948f4bde36b14ae",
             "role": "doctor"
+        },
+        {
+            "username": "Nyaga",
+            "password": "fe799eccd55c605e5d39e6600dd2bcf3184c151c13656a7bcbf36515338191e3",
+            "role": "doctor"
+        },
+        {
+            "username": "Kate",
+            "password": "6bf4c9841b7075bd6e925a863fa922062e6b9b62969fc0ba1e8cd6a54af58bf5",
+            "role": "receptionist"
+        },
+        {
+            "username": "Dr Nyaga",
+            "password": "fe799eccd55c605e5d39e6600dd2bcf3184c151c13656a7bcbf36515338191e3",
+            "role": "doctor"
+        },
+        {
+            "username": "Fabrizio",
+            "password": "d59863b731c4e385b3b145307bd3df7dd7f8470afecf508d2b3050bf6615743b",
+            "role": "receptionist"
+        },
+        {
+            "username": "Dr Carrick",
+            "password": "6f077f14ec0887a4a2a5e924616a7c53f89d17badca28ab1b46b0742e82cff92",
+            "role": "doctor"
+        },
+        {
+            "username": "Pogba",
+            "password": "069d2a0709c10ea3e833e0610230ed28fa6c7ce794177d147a3a9967135df5fa",
+            "role": "receptionist"
+        },
+        {
+            "username": "Mumbi",
+            "password": "6171301395a2558e5fba101aad2422b9d45cfc4994bb6fc7188ef3199616ed85",
+            "role": "receptionist"
+        },
+        {
+            "username": "Dr Jenga",
+            "password": "30d4fddf3798748afc2cb8f77853ab8099940020328022f07de30153c40c7c5c",
+            "role": "doctor"
+        },
+        {
+            "username": "Brenda",
+            "password": "985b2b35226bea576f12d75c7b844849a0beae50eb69058deb2a793960745ee9",
+            "role": "receptionist"
         }
     ]
 }
