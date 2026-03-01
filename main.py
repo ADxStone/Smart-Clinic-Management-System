@@ -1,27 +1,31 @@
 from Models.users import UserManager
-from Models.patient import list_patients
-from Models.appointment import list_appointments_for_doctor
+from Models.appointment import Appointment
 from Utilities.decorators import login, role
-
+from Models.patient import Patient
 
 @login
 @role("doctor")
 def doctor_menu(manager: UserManager, user=None):
     while True:
         print("\n--- DOCTOR MENU ---")
-        print("1. View my appointments- Not complete")
-        print("2. Mark appointment completed - Not complete")
-        print("3. View all complete appointments - Not complete")
+        print("1. View my appointments")
+        print("2. Mark appointment completed")
+        print("3. View all complete appointments")
         print("4. Back / Logout")
-        choice = input("Select (1-3): ").strip()
+        choice = input("Select (1-4): ").strip()
         if choice == "1":
-            username = user.username if hasattr(user, 'username') else user.get('username')
-            appts = list_appointments_for_doctor(username)
-            print("Appointments for", username, appts)
+            Appointment.view_doctor(
+                {"username": user.username}
+            )
         elif choice == "2":
-            print("Example: No logic implemented")
+            Appointment.complete(
+                {"username": user.username}
+            )
+            
         elif choice == "3":
-            print("Example: No logic implemented")
+            print("completed appointments:")
+            Appointment.view_all()
+            
         elif choice == "4":
             print(manager.logout_user())
             break
@@ -33,25 +37,36 @@ def doctor_menu(manager: UserManager, user=None):
 @role("receptionist")
 def receptionist_menu(manager: UserManager, user=None):
     while True:
-        print("\n--- RECEPTIONIST MENU ---")
-        print("1.Register patient. - Not complete")
-        print("2.List patients - Not complete ")
-        print("3.Create appointment-Not complete")
-        print("4.View appointments(1.For each patient, 2. For each doctor)-Not complete")
-        print("5. Back / Logout")
-        choice = input("Select (1-3): ").strip()
+        print("1. Register patient")
+        print("2. List patients")
+        print("3. Update patient")
+        print("4. Delete patient")
+        print("5. Create appointment")
+        print("6. View appointments")
+        print("7. Back / Logout")
+        choice = input("Select (1-7): ").strip()
         if choice == "1":
-            print("Example: No logic implemented.")
+            Patient.register_patient()
+
         elif choice == "2":
-            pats = list_patients()
-            print("Patients:", pats)
+            Patient.view_patients()
+
         elif choice == "3":
-            print("Example: create appointment (No logic implemented)")
+            Patient.update_patients()
+
         elif choice == "4":
-            print("Example: View appointments(No logic implemented)")
+            Patient.delete_patients()
+
         elif choice == "5":
+            Appointment.create({"username": user.username})
+
+        elif choice == "6":
+            Appointment.view_all()
+
+        elif choice == "7":
             print(manager.logout_user())
             break
+
         else:
             print("Invalid option")
 
@@ -114,7 +129,5 @@ def main():
 
         else:
             print("Invalid option. Please select 1-4.")
+            
 
-
-if __name__ == "__main__":
-    main()

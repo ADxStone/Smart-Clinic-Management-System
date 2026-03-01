@@ -1,10 +1,12 @@
-<<<<<<< HEAD
 import json
 import os
 from datetime import datetime
 
 APPOINTMENTS_FILE = "Storage/appointments.json"
 PATIENTS_FILE = "Storage/patients.json"
+
+
+
 
 #---------------- HELPER METHODS ------------------
 class Appointment:
@@ -14,7 +16,10 @@ class Appointment:
         if not os.path.exists(file):
             return[]
         with open(file, "r") as f:
-            return json.load(f)
+            try:
+                return json.load(f)
+            except json.JSONDecodeError:
+                return []
         
     @staticmethod
     def save_data(file, data):
@@ -29,40 +34,48 @@ class Appointment:
         patients = Appointment.load_data(PATIENTS_FILE)
         
         
-        try:
-            patient_id = int(input("patient ID: "))
-        except ValueError:
+        
+        patient_id = input("patient ID: ").strip()
+        print("DEBUG PATIENT ID:", patient_id)
+        if not patient_id:
             print("Invalid patient ID.")
             return
         
         date = input("Date (YYYY-MM-DD): ")
         
-        time_input = input("Time (HH:MM AM/PM): ")
+        time_input = input("Time (HH:MM AM/PM): ").strip().upper()
+        print("DEBUG:", repr(time_input))
         
         try:
-            valid_time = datetime.strtime(time_input, "%I:%M:%P")
-            time = valid_time.strftime("%I:%M:%P")
+            valid_time = datetime.strptime(time_input, "%I:%M %p")
+            time = valid_time.strftime("%I:%M %p")
         except ValueError:
-            print("Invalid time format. Example: 02:30pm")
+            print("Invalid time format. Example: 02:30 pm")
             return
         
         #CHECK IF PATINETS EXISTS
     
-        if not any(p["id"] == patient_id for p in patients):
+        if not any(str(p["id"]) == patient_id for p in patients):
             print("Patient not found.")
             return
         
      #GENERATE UNIQUE ID SAFELY
         if appointments:
-             new_id = max(a["id"] for a in appointments) + 1
+             new_id = max(int(p["id"]) for p in appointments) + 1
         else:
            new_id = 1
+        doctor_name = input("Enter doctor username").strip()
+        
+        if not doctor_name:
+            print("Doctor username required.")
+            return
 
         appointment = {
             "id": new_id,
             "patient_id": patient_id,
-            "doctor": current_user["username"],  # auto-assign logged-in doctor
-            "date": date,
+            "doctor": doctor_name,  # auto-assign logged-in doctor
+            "date": date,  
+            "time": time,
             "completed": False
         }
 
@@ -122,6 +135,7 @@ class Appointment:
              print("Invalid appoint ID.")
              return
         
+        found = True
         
         for a in appointments:
             if a ["id"] == appointment_id:
@@ -130,10 +144,11 @@ class Appointment:
                     return
                 
                 a["completed"]  = True
-                Appointment.save_data(APPOINTMENTS_File, appointments)
+                Appointment.save_data(APPOINTMENTS_FILE, appointments)
                 print("Marked as completed.")
                 return 
             
+        if not found:
             print("Appointment not found.")
                 
                 
@@ -159,7 +174,7 @@ class Appointment:
            
         print("Appointment not found.")
             
-=======
-appointments = []
+
+
 
 
