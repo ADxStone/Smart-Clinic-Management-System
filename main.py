@@ -45,6 +45,7 @@ def receptionist_menu(manager: UserManager, user=None):
         print("6. View appointments")
         print("7. Back / Logout")
         choice = input("Select (1-7): ").strip()
+        print("")
         if choice == "1":
             Patient.register_patient()
 
@@ -80,10 +81,9 @@ def main():
         print("\n=== SMART CLINIC MANAGEMENT SYSTEM ===")
         print("1. Register User")
         print("2. Login")
-        print("3. Logout")
-        print("4. Exit")
+        print("3. Exit")
 
-        choice = input("Select an option (1-4): ").strip()
+        choice = input("Select an option (1-3): ").strip()
 
         if choice == "1":
             print("\n--- REGISTER USER ---")
@@ -107,6 +107,7 @@ def main():
             print("\n--- LOGIN ---")
             username = input("Enter username: ").strip()
             password = input("Enter password: ").strip()
+            print("")
             result = manager.login_user(username, password)
             print(result)
 
@@ -120,10 +121,6 @@ def main():
                     print("Unknown role; contact admin.")
 
         elif choice == "3":
-            print("\n--- LOGOUT ---")
-            print(manager.logout_user())
-
-        elif choice == "4":
             print("Exiting system. Goodbye!")
             break
 
