@@ -1,0 +1,68 @@
+[
+    {
+        "id": "p1",
+        "name": "Kimbo",
+        "age": "25",
+        "condition": "Diabetes"
+    },
+    {
+        "id": "p2",
+        "name": "loggers",
+        "age": "23",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p3",
+        "name": "kivevi",
+        "age": "89",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p4",
+        "name": "Mulla",
+        "age": "45",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p5",
+        "name": "Daniel",
+        "age": "40",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p7",
+        "name": "Brainan",
+        "age": "10",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p9",
+        "name": "Nake",
+        "age": "23",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p10",
+        "name": "Mbappe",
+        "age": "23",
+        "condition": "Malaria"
+    },
+    {
+        "id": "p11",
+        "name": "Heaven",
+        "age": "20",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p12",
+        "name": "Nunez",
+        "age": "27",
+        "condition": "Diabities"
+    },
+    {
+        "id": "p11",
+        "name": "Semenyo",
+        "age": "23",
+        "condition": "Diabities"
+    }
+]
