@@ -18,7 +18,7 @@ class Patient:
         data = load_patients()
 
         name = input("Enter patient name: ")
-        age = input("Enter age: ")
+        age = input("Enter patient age: ")
         condition = input("Enter condition: ")
 
         patient_id = "p" + str(len(data) + 1)

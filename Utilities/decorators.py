@@ -1,7 +1,7 @@
 from functools import wraps
-from typing import Callable
 
-def login(func) -> Callable:
+
+def login(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         user = kwargs.get("user")
@@ -12,10 +12,10 @@ def login(func) -> Callable:
     return wrapper
 
 
-def role(required_role) -> Callable:
+def role(required_role):
     required_role = required_role.lower()
 
-    def decorator(func) -> Callable:
+    def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
             user = kwargs.get("user")

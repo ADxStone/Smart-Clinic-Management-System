@@ -119,6 +119,16 @@
             "username": "Brenda",
             "password": "985b2b35226bea576f12d75c7b844849a0beae50eb69058deb2a793960745ee9",
             "role": "receptionist"
+        },
+        {
+            "username": "joan",
+            "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+            "role": "doctor"
+        },
+        {
+            "username": "alice",
+            "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+            "role": "receptionist"
         }
     ]
 }

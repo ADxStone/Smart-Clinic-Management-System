@@ -1,7 +1,7 @@
-from Parts.users import UserManager
-from Parts.appointment import Appointment
+from Models.users import UserManager
+from Models.appointment import Appointment
 from Utilities.decorators import login, role
-from Parts.patient import Patient
+from Models.patient import Patient
 
 @login
 @role("doctor")
@@ -12,6 +12,7 @@ def doctor_menu(manager: UserManager, user=None):
         print("2. Mark appointment completed")
         print("3. View all complete appointments")
         print("4. Back / Logout")
+        print("")
         choice = input("Select (1-4): ").strip()
         if choice == "1":
             Appointment.view_doctor(
@@ -37,6 +38,7 @@ def doctor_menu(manager: UserManager, user=None):
 @role("receptionist")
 def receptionist_menu(manager: UserManager, user=None):
     while True:
+        print("\n--- RECEPTIONIST MENU ---")
         print("1. Register patient")
         print("2. List patients")
         print("3. Update patient")
@@ -44,6 +46,7 @@ def receptionist_menu(manager: UserManager, user=None):
         print("5. Create appointment")
         print("6. View appointments")
         print("7. Back / Logout")
+        print("")
         choice = input("Select (1-7): ").strip()
         print("")
         if choice == "1":
@@ -89,6 +92,7 @@ def main():
             print("\n--- REGISTER USER ---")
             username = input("Enter username: ").strip()
             password = input("Enter password: ").strip()
+            print("")
             role = input("Enter role (doctor/receptionist): ").strip().lower()
 
             if role not in ["doctor", "receptionist"]:

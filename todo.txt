@@ -21,18 +21,6 @@ Utilities(Decorators)
 
 Concise requirements: data your decorators need to run smoothly
 
--A user dict with:
-    ]"username" (string)
-    ]"role" (string; case-insensitive; e.g., "doctor" or "receptionist")
-    ]OR a user object provided indirectly via Models.users.get_current_user() returning an object/dict or Models.users.current_user variable accessible by import.
--For role checks, the decorator looks for:
-    ]dict: user["role"] or user["role_name"]
-    ]object: user.role attribute (but only when obtained via Models.users in the extractor)
--Note: If you want to pass an object directly into decorated functions (positional or kwarg) you should either:
-    ]convert _extract_user_from_args_kwargs to accept object user passed positionally (I can update that), or
-    ]always pass a dict for user when calling decorated functions, or
-    ]rely on Models.users.get_current_user() to return the object and let decorators fetch it.
-
 Main
     -Link all existing files.
     -House the Main Menu.

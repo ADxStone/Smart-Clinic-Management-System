@@ -35,16 +35,14 @@ class Appointment:
         
         
         
-        patient_id = input("patient ID: ").strip()
-        print("DEBUG PATIENT ID:", patient_id)
+        patient_id = input("Enter Patient ID:").strip()
         if not patient_id:
             print("Invalid patient ID.")
             return
         
-        date = input("Date (YYYY-MM-DD): ")
+        date = input("Date (YYYY-MM-DD):")
         
-        time_input = input("Time (HH:MM AM/PM): ").strip().upper()
-        print("DEBUG:", repr(time_input))
+        time_input = input("Time (HH:MM AM/PM):").strip().upper()
         
         try:
             valid_time = datetime.strptime(time_input, "%I:%M %p")
@@ -64,13 +62,15 @@ class Appointment:
              new_id = max(int(p["id"]) for p in appointments) + 1
         else:
            new_id = 1
-        doctor_name = input("Enter doctor username").strip()
+        doctor_name = input("Enter Doctor username:").strip()
+        print("")
         
         if not doctor_name:
             print("Doctor username required.")
             return
         
-        users = Appointment.load_data(USERS_FILE)
+        users_data = Appointment.load_data(USERS_FILE)
+        users = users_data.get("users", [])
         
         doctor_user = None
         
