@@ -1,7 +1,7 @@
-from Models.users import UserManager
-from Models.appointment import Appointment
+from Parts.users import UserManager
+from Parts.appointment import Appointment
 from Utilities.decorators import login, role
-from Models.patient import Patient
+from Parts.patient import Patient
 
 @login
 @role("doctor")
