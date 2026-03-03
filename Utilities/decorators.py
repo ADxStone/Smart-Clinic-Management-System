@@ -15,7 +15,7 @@ def login(func) -> Callable:
 def role(required_role) -> Callable:
     required_role = required_role.lower()
 
-    def decorator(func: Callable) -> Callable:
+    def decorator(func) -> Callable:
         @wraps(func)
         def wrapper(*args, **kwargs):
             user = kwargs.get("user")
