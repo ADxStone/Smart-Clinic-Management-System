@@ -45,6 +45,7 @@ The app is interactive via the terminal. Running `python main.py` will present t
 - Add tests or example scripts as needed.
 
 **Contributors**
+
 -Mark Wainaina
 -Prexidazie Morara
 -Nyaga Murimi
