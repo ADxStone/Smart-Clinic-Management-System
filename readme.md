@@ -9,6 +9,12 @@ A lightweight, terminal-based clinic management system for managing patients, ap
 - **User handling:** simple user records for access and ownership tracking.
 - **JSON storage:** persistent data stored in `Storage/` as JSON files.
 
+**Jira Space**
+
+```bash
+https://mathewstalel.atlassian.net/jira/software/projects/GR8/summary?atlOrigin=eyJpIjoiYzI4YTVmNzM3NzYxNGRiM2I1N2U2NDNlY2Q1NWFlZWUiLCJwIjoiaiJ9
+```
+
 **Quick Start**
 
 1. Ensure you have Python 3.8+ installed.
