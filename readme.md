@@ -8,8 +8,6 @@ A lightweight, terminal-based clinic management system for managing patients, ap
 https://adxstone.github.io/Smart-Clinic-Management-System/
 ```
 
-
-
 **Features**
 
 - **Patient management:** add, view and store patient records.
