@@ -2,6 +2,14 @@
 
 A lightweight, terminal-based clinic management system for managing patients, appointments, and users. Built in Python with a small modular codebase to support easy learning and extension.
 
+**Repository Link**
+
+```bash
+https://adxstone.github.io/Smart-Clinic-Management-System/
+```
+
+
+
 **Features**
 
 - **Patient management:** add, view and store patient records.
