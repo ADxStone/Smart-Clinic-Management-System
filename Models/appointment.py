@@ -7,7 +7,6 @@ PATIENTS_FILE = "Storage/patients.json"
 USERS_FILE = "Storage/users.json"
 
 
-print("APPINTMENT FILE LOADED")
 #---------------- HELPER METHODS ------------------
 class Appointment:
     
