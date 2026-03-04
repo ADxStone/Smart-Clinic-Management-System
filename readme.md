@@ -34,11 +34,11 @@ python main.py
 **Project Layout**
 
 - `main.py` – application entry point.
-- `Parts/` – core modules:
-  - `Parts/patient.py` – patient-related logic.
-  - `Parts/appointment.py` – appointment-related logic.
-  - `Parts/users.py` – user-related logic.
-- `Storage/` – JSON data files (`patients.json`, `appointments.json`, `users.json`).
+- `Models/` – core modules:
+  - `Models/patient.py` – patient-related logic.
+  - `Models/appointment.py` – appointment-related logic.
+  - `Models/users.py` – user-related logic.
+- `Models/` – JSON data files (`patients.json`, `appointments.json`, `users.json`).
 - `Utilities/` – helper utilities and decorators.
 
 **Usage**
