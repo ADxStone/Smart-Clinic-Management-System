@@ -1,6 +1,6 @@
 # Smart Clinic Management System
 
-A lightweight, terminal-based clinic management system for managing patients, appointments, and users. Built in Python with a small modular codebase to support easy learning and extension.
+A terminal-based clinic management system for managing patients, appointments, and users. Built in Python with a small modular codebase to support easy learning and extension.
 
 **Repository Link**
 
